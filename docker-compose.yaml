@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+  ubuntu_2204:
+    build: .
+    ports:
+      - "30020:22"
+#    platform: linux/amd64
