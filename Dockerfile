@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y procps vim build-essential curl wget gi
 RUN apt-get install -y python3 python3-pip python3-venv
 # Create a user to avoid running as root. But grant sudo privileges.
 RUN apt-get install -y sudo
-RUN useradd -m -s /bin/bash ubuntu && echo "ubuntu ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN useradd -m -s /bin/bash ubuntu; echo "ubuntu ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 RUN echo "ubuntu:ubuntu" | chpasswd
 RUN mkdir -p /workspace
 WORKDIR /workspace

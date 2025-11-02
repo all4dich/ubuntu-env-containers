@@ -3,5 +3,19 @@ services:
   ubuntu_2204:
     build: .
     ports:
-      - "30020:22"
-#    platform: linux/amd64
+      - 30022:22
+    volumes:
+#      - $HOME/.ssh:/root/.ssh
+      - $HOME/.gitconfig:/root/.gitconfig
+      - ./workspace:/workspace
+    platform: linux/amd64
+  ubuntu_2204_1:
+    build: .
+    ports:
+      - 30122:22
+    volumes:
+#      - $HOME/.ssh:/root/.ssh
+      - $HOME/.gitconfig:/root/.gitconfig
+      - ./workspace:/workspace
+    platform: linux/amd64
+
